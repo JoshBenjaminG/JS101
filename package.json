@@ -19,5 +19,9 @@
   "homepage": "https://github.com/JoshBenjaminG/JS101#readme",
   "dependencies": {
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.56.0"
   }
 }
