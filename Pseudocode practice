@@ -1,0 +1,11 @@
+Pseudocode practice
+
+START
+  SET sum
+
+GET num1, num2
+
+sum = num1 + num2;
+
+PRINT sum
+END
