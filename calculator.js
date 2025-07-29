@@ -18,7 +18,7 @@ function calculator() {
   }
 
   console.log(`${firstNumber} ${operation} ${secondNumber} is ${result}`);
-}  
+}
 
 calculator();
 
