@@ -1,27 +1,41 @@
-const readlineSync = require('readline-sync');
-// Ask the user for the first number.
-let firstNumber = Number(readlineSync.question("What is the first number?\n"));
-let secondNumber = Number(readlineSync.question("What is the second number?\n"));
-let operation = readlineSync.question("What is the operation?\n");
+const readLine = require('readline-sync');
+
+function prompt(message) {
+  console.log(message);
+}
+
+// Get user input
+prompt("=> What is the first number?");
+let firstNumber = Number(readLine.question());
+
+prompt("=> What is the second number?");
+let secondNumber = Number(readLine.question());
+
+prompt("=> What is the operation?");
+let operation = readLine.question();
 
 function calculator() {
   let result;
 
-  if (operation === "+") {
-    result = firstNumber + secondNumber;
-  } else if (operation === "-") {
-    result = firstNumber - secondNumber;
-  } else if (operation === "*") {
-    result = firstNumber * secondNumber;
-  } else if (operation === "/") {
-    result = firstNumber / secondNumber;
+  switch (operation) {
+    case '+':
+      result = Number(firstNumber) + Number(secondNumber);
+      break;
+    case '-':
+      result = Number(firstNumber) - Number(secondNumber);
+      break;
+    case '*':
+      result = Number(firstNumber) * Number(secondNumber);
+      break;
+    case '/':
+      result = Number(firstNumber) / Number(secondNumber);
+      break;
+    default:
+      result = "Invalid operation";
   }
 
-  console.log(`${firstNumber} ${operation} ${secondNumber} is ${result}`);
+  console.log(`=> ${firstNumber} ${operation} ${secondNumber} is ${result}`);
 }
 
-calculator();
 
-// Ask the user for an operation to perform.
-// Perform the operation on the two numbers.
-// Print the result to the terminal.
+calculator();
