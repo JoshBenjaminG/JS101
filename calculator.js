@@ -1,3 +1,4 @@
+const messages = require('./calculator_messages.json');
 const readline = require('readline-sync');
 
 function prompt(message) {
@@ -9,23 +10,24 @@ function invalidNumber(number) {
 }
 
 // Get user input
-prompt("=> What is the first number?");
+prompt(messages.firstNumberPrompt);
 let firstNumber = Number(readline.question());
 
+
 while (invalidNumber(firstNumber)) {
-  prompt("=> That's not a valid number.");
+  prompt(messages.invalidNumber);
   firstNumber = Number(readline.question());
 }
 
-prompt("=> What is the second number?");
+prompt(messages.secondNumberPrompt);
 let secondNumber = Number(readline.question());
 
 while (invalidNumber(secondNumber)) {
-  prompt("=> That's not a valid number.");
+  prompt(messages.invalidNumber);
   secondNumber = Number(readline.question());
 }
 
-prompt('What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide');
+prompt(messages.operationPrompt);
 let operation = readline.question();
 
 function calculator() {
@@ -48,7 +50,7 @@ function calculator() {
       result = "Invalid operation";
   }
 
-  console.log(`=> The output is ${result}`);
+  console.log(messages.result + ` ${result}`);
 }
 
 

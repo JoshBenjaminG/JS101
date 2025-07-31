@@ -1,0 +1,9 @@
+{
+  "welcome": "=> Welcome to Calculator!",
+  "firstNumberPrompt": "=> What is the first number?",
+  "secondNumberPrompt": "=> What is the second number?",
+  "invalidNumber": "=> That's not a valid number.",
+  "operationPrompt": "=> What operation would you like to perform?\n1) Add\n2) Subtract\n3) Multiply\n4) Divide",
+  "invalidOperation": "=> Please enter a valid operation: 1, 2, 3, or 4",
+  "result": "=> The output is"
+}
