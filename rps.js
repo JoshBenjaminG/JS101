@@ -2,10 +2,20 @@ const readline = require('readline-sync');
 
 console.log("=> Welcome to rock paper scissors!");
 
+function normalize(input) {
+  input = input.toLowerCase();
+  if (input === "rock" || "r") return 'rock';
+  if (input === "paper" || "p") return 'paper';
+  if (input === "scissors" || "s") return 'scissors';
+}
+
+
 function play() {
   while (true) {
     console.log("=> Do you choose rock, paper, or scissors?");
-    let playerChoice = readline.question().toLowerCase();
+    let rawInput = readline.question().toLowerCase();
+    let normalizedInput = normalize(rawInput);
+
 
     let randomNumber = Math.floor(Math.random() * 3) + 1;
     let computerChoice;
@@ -22,15 +32,15 @@ function play() {
         break;
     }
 
-    console.log(`You chose ${playerChoice}!`);
+    console.log(`You chose ${normalizedInput}!`);
     console.log(`The CPU chose ${computerChoice}!`);
 
-    if (playerChoice === computerChoice) {
+    if (normalizedInput === computerChoice) {
       console.log("It's a tie!");
     } else if (
-      (playerChoice === 'rock' && computerChoice === 'scissors') ||
-      (playerChoice === 'paper' && computerChoice === 'rock') ||
-      (playerChoice === 'scissors' && computerChoice === 'paper')
+      (normalizedInput === 'r'  && computerChoice === 'scissors') ||
+      (normalizedInput === 'p' && computerChoice === 'rock') ||
+      (normalizedInput === 's' && computerChoice === 'paper')
     ) {
       console.log("You win!");
     } else {
