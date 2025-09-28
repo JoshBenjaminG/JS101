@@ -1,8 +1,24 @@
 function isLeapYear(year) {
-  if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
-    console.log(`True`);
+  if (year >= 1752) {
+    gregorian(year);
   } else {
-    console.log(`False`);
+    julian(year);
+  }
+}
+
+function gregorian(year) {
+  if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
+    console.log(`${year} true`);
+  } else {
+    console.log(`${year} false`);
+  }
+}
+
+function julian(year) {
+  if (year % 4 === 0) {
+    console.log(`${year} true`);
+  } else {
+    console.log(`${year} false`);
   }
 }
 
