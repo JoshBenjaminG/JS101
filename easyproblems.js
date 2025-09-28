@@ -32,3 +32,20 @@ function allEvenNumbers() {
 }
 
 allEvenNumbers();
+
+let readlineSync = require("readline-sync");
+
+const SQMETERS_TO_SQFEET = 10.7639;
+
+console.log("Enter the length of the room in meters:");
+
+let length = readlineSync.prompt();
+
+console.log("Enter the width of the room in meters:");
+
+let width = readlineSync.prompt();
+
+let area = width * length;
+let feet = area * SQMETERS_TO_SQFEET;
+
+console.log(`The area of the room is ${area} square meters and ${feet} square feet.`);
