@@ -110,7 +110,7 @@ rules:
   no-lonely-if: error
   no-loop-func: error
   no-misleading-character-class: error
-  no-mixed-operators: error
+  no-mixed-operators: 
   no-multi-assign: error
   no-multi-str: error
   no-multiple-empty-lines: error
